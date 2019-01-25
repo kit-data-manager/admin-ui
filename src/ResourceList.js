@@ -18,7 +18,7 @@ import React from 'react';
 import { List, Datagrid, DateField, TextField, EditButton } from 'react-admin';
 
 export const ResourceList = props => (
-           <List {...props}>
+           <List title="Repository Content" {...props}>
            <Datagrid rowClick="edit">
               <TextField source="id" label="id"/>
               <TextField source="identifier.value" label="DOI" sortable={false} />

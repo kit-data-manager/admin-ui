@@ -1,9 +1,11 @@
 import RepoDataProvider from './RepoDataProvider';
 import ContentInformationProvider from './ContentInformationProvider';
+import HealthDataProvider from './HealthDataProvider';
 
 const dataProviders = [
     { dataProvider: RepoDataProvider, resources: ['dataresources'] },
-    { dataProvider: ContentInformationProvider, resources: ['contentinformation'] }
+    { dataProvider: ContentInformationProvider, resources: ['contentinformation'] },
+    { dataProvider: HealthDataProvider, resources: ['health'] }
 ];
 
 export default (type, resource, params) => {

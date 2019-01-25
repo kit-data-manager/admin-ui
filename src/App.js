@@ -22,7 +22,7 @@ import { ResourceList } from './ResourceList';
 
 import { ResourceEdit } from './ResourceEdit';
 //import fakeDataProvider from 'ra-data-fakerest';
-import Dashboard from './Dashboard';
+import HealthDashboard from './HealthDashboard';
 //const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 //import { createMuiTheme } from '@material-ui/core/styles';
 //import { createMuiTheme } from '@material-ui/core/styles';
@@ -319,9 +319,10 @@ const myDarkTheme = createMuiTheme({
 });*/
 
 const App = () => (
-  <Admin dashboard={Dashboard} dataProvider={dataProviders}>
+  <Admin dashboard={HealthDashboard} dataProvider={dataProviders}>
   <Resource name="dataresources" list={ResourceList} edit={ResourceEdit}/>
   <Resource name="contentinformation"/>
+  <Resource name="health"/>
   </Admin>
 );
 

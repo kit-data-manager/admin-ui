@@ -26,7 +26,6 @@ import ContentInformationGrid from './ContentInformationGrid';
 
 
 /*Custom component to provide a string as ChipField*/
-
 class ContentInformationView extends Component {
     state = {};
 
