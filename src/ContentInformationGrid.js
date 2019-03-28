@@ -118,6 +118,7 @@ const ContentInformationGrid = ({ value, apiUrl, classes, isLoading}) => (
                             <p>Loading content information...</p>
                             )}
                          </div>
+                                 
                                              );
 
 

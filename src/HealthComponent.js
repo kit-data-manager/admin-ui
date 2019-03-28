@@ -66,6 +66,9 @@ const styles = {
    },
    error: {
       color: 'red'
+   },
+   misc: {
+      color: 'grey'
    }
 };
 
@@ -81,8 +84,12 @@ const addHealthElement = (identifier, status, detailsLabel, value, classes) => (
                                     <div><b>{detailsLabel}:</b> {value}</div>
                                  </div>
                                     ) : (
+                       {status === 'OUT_OF_SERVICE' ? (
+                         <div className={classes.misc}><b>Status:</b> {status}</div>
+                        ) : (
                          <div className={classes.error}><b>Status:</b> {status}</div>
                             )}
+                     )}
               </Typography>
            </CardContent>
            </Card>
