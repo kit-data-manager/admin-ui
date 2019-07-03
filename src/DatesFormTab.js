@@ -39,6 +39,8 @@ class DatesTab extends Component {
       <Fragment>
       <h3 style={headerStyle.margin}>Event Dates</h3>
       <DatesInput/>
+       <h3 style={headerStyle.margin}>Last Modified</h3>
+        <DateTimeInput source="lastModified" label="Last Modified"/>
       <h3 style={headerStyle.margin}>Embargo</h3>
         <DateTimeInput source="embargoDate" label="End time"/>
       </Fragment>

@@ -82,14 +82,16 @@ const addHealthElement = (identifier, status, detailsLabel, value, classes) => (
                                  <div>
                                     <div className={classes.up}><b>Status:</b> {status}</div>
                                     <div><b>{detailsLabel}:</b> {value}</div>
-                                 </div>
-                                    ) : (
-                       {status === 'OUT_OF_SERVICE' ? (
+                                 </div>) : (<div/>)}
+           
+                 {status === 'OUT_OF_SERVICE' ? (
                          <div className={classes.misc}><b>Status:</b> {status}</div>
-                        ) : (
+                            ) : (<div/>)}
+           
+                 {status === 'DOWN' ? (
                          <div className={classes.error}><b>Status:</b> {status}</div>
-                            )}
-                     )}
+                            ) : (<div/>)}
+           
               </Typography>
            </CardContent>
            </Card>
@@ -98,29 +100,29 @@ const addHealthElement = (identifier, status, detailsLabel, value, classes) => (
 const HealthComponent = ({ value, classes}) => (
            <div className={classes.main}>                     
               {value ? (
-                         <div className={classes.flexContainer}>
-                               <Card className={classes.cardBig}>
-                               <CardHeader title="Overall Health"/>
-                                <CardContent className={classes.content}>
-                              <div>The overall health status of the repository system. The status changed from 'UP' as soon as at least one component is not working.</div>
-                                 <br/>
-                               <Typography className= {classes.title} color="textSecondary">
-                                  {value.status === 'UP' ? (
-                                       <div>
-                                            <div className={classes.up}><b>Status:</b> {value.status}</div>
-                                          </div>
-                                    ) : (
-                                 <div className={classes.error}><b>Status:</b> {value.status}</div>
-                                    )}
-                              </Typography>
-                               </CardContent>
-                               </Card>
-                                    
-                            {addHealthElement("DataResourceService", value.details.dataResourceService.status, "Resources", value.details.dataResourceService.details.DataResources, classes)}
-                              {addHealthElement("ContentInformationService", value.details.contentInformationService.status, "Files", value.details.contentInformationService.details.ContentInformation, classes)}
-                              {addHealthElement("Database", value.details.db.status, "System", value.details.db.details.database, classes)}
-                            {addHealthElement("RabbitMQ", value.details.rabbit.status, "Version", value.details.rabbit.details.version, classes)}
-                              {addHealthElement("Local Harddisk", value.details.diskSpace.status, "Free Diskspace", value.details.diskSpace.details.free, classes)}
+                                 <div className={classes.flexContainer}>
+                                    <Card className={classes.cardBig}>
+                                    <CardHeader title="Overall Health"/>
+                                    <CardContent className={classes.content}>
+                                       <div>The overall health status of the repository system. The status changed from 'UP' as soon as at least one component is not working.</div>
+                                       <br/>
+                                       <Typography className= {classes.title} color="textSecondary">
+                                          {value.status === 'UP' ? (
+                                                                  <div>
+                                                                     <div className={classes.up}><b>Status:</b> {value.status}</div>
+                                                                  </div>
+                                                                ) : (
+                                                          <div className={classes.error}><b>Status:</b> {value.status}</div>
+                                                        )}
+                                       </Typography>
+                                    </CardContent>
+                                    </Card>
+                              
+                                    {addHealthElement("DataResourceService", value.details.dataResourceService.status, "Resources", value.details.dataResourceService.details.DataResources, classes)}
+                                    {addHealthElement("ContentInformationService", value.details.contentInformationService.status, "Files", value.details.contentInformationService.details.ContentInformation, classes)}
+                                    {addHealthElement("Database", value.details.db.status, "System", value.details.db.details.database, classes)}
+                                    {addHealthElement("RabbitMQ", value.details.rabbit.status, "Version", value.details.rabbit.details.version, classes)}
+                                    {addHealthElement("Local Harddisk", value.details.diskSpace.status, "Free Diskspace", value.details.diskSpace.details.free, classes)}
                                  </div>
                                  ) : (
                          <p>Loading content information...</p>
