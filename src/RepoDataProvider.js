@@ -25,7 +25,7 @@ import {
 
 require('dotenv').config();
 
-const apiUrl = process.env.API_URL;
+const apiUrl = process.env.REACT_APP_API_URL;
 console.log("ENV ", process.env);
  console.log("API URL: ", apiUrl);
 //const apiUrl = 'http://episteme2.scc.kit.edu:8080/api/v1';
