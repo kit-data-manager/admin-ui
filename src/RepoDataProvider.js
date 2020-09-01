@@ -24,7 +24,7 @@ import {
 } from 'react-admin';
 
 const apiUrl = process.env.API_URL;
-
+ console.log("API URL: ", apiUrl);
 //const apiUrl = 'http://episteme2.scc.kit.edu:8080/api/v1';
 
 /**
