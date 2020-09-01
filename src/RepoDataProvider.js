@@ -23,6 +23,8 @@ import {
     DELETE
 } from 'react-admin';
 
+require('dotenv').config();
+
 const apiUrl = process.env.API_URL;
 console.log("ENV ", process.env);
  console.log("API URL: ", apiUrl);
